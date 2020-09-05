@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, session, copy_current_request_context
 from vsearch import search4letters
-from DBcm import UseDatabase, ConnectionError, CredentialsError, SQLError
-from checker import check_logged_in
+from .DBcm import UseDatabase, ConnectionError, CredentialsError, SQLError
+from .checker import check_logged_in
 from threading import Thread
 
 
@@ -103,5 +103,4 @@ def view_the_log() -> 'html':  # Теперь данные извлекаютс�
 
 if __name__ == '__main__':
     app.run(debug=True)
-# TODO: сделать взаимодействие с базой данных на PythonAnywhere
 # TODO: сделать контейнеризацию приложения в докер и выложить на хаб
